@@ -280,6 +280,7 @@ html body {
   height: 38px;
   background: url(../img/metaplanet4x.png) no-repeat 0 50%;
   background-size: auto 100%;
+  margin: auto;
 }
 
 @media screen and (max-width: 1200px) {
@@ -331,26 +332,41 @@ html body {
 .gnb.is_pc {
   text-align: center; /* is_selected */
   width: 90%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .gnb.is_pc .gnb-btn {
   display: none;
 }
 
+.gnb.is_pc .gnb-wrap {
+  position: relative;
+}
+
 .gnb.is_pc .gnb-icon {
   width: 2.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem 2rem;
 }
 
 .gnb.is_pc .gnb-icon .icon {
-  margin: auto;
+  margin: 8px auto;
   width: 90%;
   height: 2px;
   background: #000;
 }
 
+.gnb.is_pc .gnb-list {
+  padding: 4rem 2rem;
+}
+
 .gnb.is_pc .gnb-item {
-  display: inline-block;
-  vertical-align: middle;
+  /* display: inline-block;
+  vertical-align: middle; */
+  text-align: right;
 }
 
 .gnb.is_pc .gnb-item:not(:first-child) {
@@ -398,7 +414,7 @@ html body {
 .gnb.is_pc .is_selected.gnb-item button:before,
 .gnb.is_pc .gnb-item button:hover:before,
 .gnb.is_pc .gnb-item button:focus:before {
-  width: 100%;
+  /* width: 100%; */
 }
 
 @media screen and (max-width: 1600px) {
