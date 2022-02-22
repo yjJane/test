@@ -673,8 +673,11 @@ html body {
 
 .main-title_box {
   position: fixed;
-  left: 40px;
-  bottom: 6%;
+  /* left: 40px; */
+  left: 20%;
+  /* bottom: 6%; */
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 20;
   width: 100%;
   color: #fff;
@@ -2573,7 +2576,7 @@ html body {
 }
 
 .main_brand {
-  position: fixed;
+  /* position: fixed; */
   top: 24px;
   left: 16px;
 }
