@@ -48,46 +48,79 @@
   <header class="header" id="header">
     <div class="header-wrap">
       <a class="site_logo" href="index.html"><h1>Metaplanet</h1></a>
-      <!-- gnb -->
-      <nav class="gnb">
-        <h2 class="ir_text">Main menu</h2>
-        <button type="button" class="gnb-btn"><span class="ir_text">Main menu</span></button>
-        <div class="gnb-wrap">
-          <div class="gnb-icon">
-            <div class="icon icon-top"></div>
-            <div class="icon icon-middle"></div>
-            <div class="icon icon-bottom"></div>
-          </div>
-          <ul class="gnb-list">
-            <li class="gnb-item is_selected">
-              <a href="entry-en.html"><span class="gnb-title">Main Entrance</span></a>
-            </li>
-            <li class="gnb-item">
-              <a href="conference-en.html"><span class="gnb-title">2021FDC</span></a>
-            </li>
-            <li class="gnb-item">
-              <a href="hall1-en.html"><span class="gnb-title">Pavilion</span></a>
-            </li>
-            <li class="gnb-item">
-              <a href="search-en.html"><span class="gnb-title">Exhibitor</span></a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <!-- //gnb -->
-      <div class="breadcrumbs ir_text" role="navigation">
-        <ol class="breadcrumbs_list">
-          <li class="breadcrumbs_item">
-            <strong><span>2021 FOREIGN COMPANY DAY - </span><span class="is_now">Entry</span></strong>
-          </li>
-        </ol>
+      <div class="gnb-icon">
+        <div class="icon icon-top"></div>
+        <div class="icon icon-middle"></div>
+        <div class="icon icon-bottom"></div>
       </div>
-      <!-- <div class="global">
-        <ul class="global-list">
-          <li class="global-item"><button type="button" class="btn_help_pop"><span class="ir_text">Control guide</span></button></li>
-        </ul>
-      </div> -->
     </div>
+    <!-- gnb -->
+    <nav class="gnb">
+      <h2 class="ir_text">Main menu</h2>
+      <button type="button" class="gnb-btn"><span class="ir_text">Main menu</span></button>
+
+      <div class="gnb-wrap">
+        <ul class="gnb-list">
+          <li class="gnb-item">
+            <a href="#"><span class="gnb-title">Main Entrance</span></a>
+            <ul class="gnb-sub-list">
+              <li class="gnb-sub-item">
+                <a href=""><span class="gnb-sub-title">aaaa</span></a>
+                <a href=""><span class="gnb-sub-title">bbbb</span></a>
+                <a href=""><span class="gnb-sub-title">cccc</span></a>
+                <a href=""><span class="gnb-sub-title">dddd</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class="gnb-item">
+            <a href="#"><span class="gnb-title">2021FDC</span></a>
+            <ul class="gnb-sub-list">
+              <li class="gnb-sub-item">
+                <a href=""><span class="gnb-sub-title">aaaa</span></a>
+                <a href=""><span class="gnb-sub-title">bbbb</span></a>
+                <a href=""><span class="gnb-sub-title">cccc</span></a>
+                <a href=""><span class="gnb-sub-title">dddd</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class="gnb-item">
+            <a href="#"><span class="gnb-title">Pavilion</span></a>
+            <ul class="gnb-sub-list">
+              <li class="gnb-sub-item">
+                <a href=""><span class="gnb-sub-title">aaaa</span></a>
+                <a href=""><span class="gnb-sub-title">bbbb</span></a>
+                <a href=""><span class="gnb-sub-title">cccc</span></a>
+                <a href=""><span class="gnb-sub-title">dddd</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class="gnb-item">
+            <a href="#"><span class="gnb-title">Exhibitor</span></a>
+            <ul class="gnb-sub-list">
+              <li class="gnb-sub-item">
+                <a href=""><span class="gnb-sub-title">aaaa</span></a>
+                <a href=""><span class="gnb-sub-title">bbbb</span></a>
+                <a href=""><span class="gnb-sub-title">cccc</span></a>
+                <a href=""><span class="gnb-sub-title">dddd</span></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- //gnb -->
+    <div class="breadcrumbs ir_text" role="navigation">
+      <ol class="breadcrumbs_list">
+        <li class="breadcrumbs_item">
+          <strong><span>2021 FOREIGN COMPANY DAY - </span><span class="is_now">Entry</span></strong>
+        </li>
+      </ol>
+    </div>
+    <!-- <div class="global">
+      <ul class="global-list">
+        <li class="global-item"><button type="button" class="btn_help_pop"><span class="ir_text">Control guide</span></button></li>
+      </ul>
+    </div> -->
   </header>
   <!-- //header -->
 
@@ -231,6 +264,44 @@
         // }
         
         $('.vr-player').append('<iframe id="vr-player" src="'+ url +'" class="vr-iframe" allowfullscreen  allow="camera *;microphone *"></iframe>');
+      });
+
+      $('.gnb-icon').click(function(){
+        $(this).toggleClass('gnb-open');
+        if($(this).hasClass('gnb-open')){
+          $('.gnb-wrap').css({
+            'right':'0'
+          })
+        } else {
+          $('.gnb-wrap').css({
+            'right':'-50%'
+          })
+        }
+      });
+
+      // $('.gnb-item').mouseover(function(){
+      //   var subGnb = $(this).children('ul');
+      //   subGnb.addClass('show-subgnb');
+      // }).mouseleave(function(){
+      //   var selectSubGnb = $(this).children('ul');
+      //   selectSubGnb.removeClass('show-subgnb');
+      // });
+
+      $('.gnb-item').click(function(){
+        $(this).toggleClass('show-subgnb');
+        if($(this).hasClass('show-subgnb')){
+          $(this).removeClass('show-subgnb');
+          $(this).addClass('show-subgnb');
+          var subGnb = $(this).children('ul');
+          subGnb.slideToggle();
+          event.stopPropagation();
+        } else {
+          $(this).addClass('show-subgnb');
+          $(this).removeClass('show-subgnb');
+          var subGnb2 = $(this).children('ul');
+          subGnb2.slideToggle();
+          event.stopPropagation();
+        }
       });
     });
    
